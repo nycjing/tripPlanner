@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const db = new Sequelize('postgres://localhost:5432');
+const db = new Sequelize('postgres://localhost:5432/tripplanner');
 
 const Place = db.define('place', {
   address: { type: Sequelize.TEXT }, //"75 Wall St"
