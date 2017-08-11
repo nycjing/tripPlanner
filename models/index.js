@@ -1,8 +1,6 @@
 const Sequelize = require('sequelize');
 const db = new Sequelize('postgres://localhost:5432');
 
-module.exports = db;
-
 const Place = db.define('place', {
   address: { type: Sequelize.TEXT }, //"75 Wall St"
   city: { type: Sequelize.STRING },  //"New York"
@@ -31,3 +29,15 @@ const Restaurant = db.define('restaurant', {
 Hotel.belongsTo(Place);
 Activity.belongsTo(Place);
 Restaurant.belongsTo(Place);
+
+module.exports = {
+  db,
+  Place,
+  Hotel,
+  Activity,
+  Restaurant
+};
+
+
+
+
