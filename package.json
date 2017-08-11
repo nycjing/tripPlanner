@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:production": "node theServerFilename",
+    "start:dev": "nodemon -e html,css,js theServerFilename",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "node-sass -w -r assets/stylesheets -o public/stylesheets"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +22,8 @@
     "nunjucks": "^3.0.1",
     "pg": "^7.1.0",
     "sequelize": "^4.4.3"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.3"
   }
 }

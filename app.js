@@ -27,10 +27,11 @@ app.get('/', function (req, res, next) {
   res.render('home');
 });
 
-
-
 app.use(function (err, req, res, next) {
-  res.render('error');
+  if(err) console.err(err.message);
+  else {
+    res.render('error');
+  }
 });
 
 const PORT = 3000;
