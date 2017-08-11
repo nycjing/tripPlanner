@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
-const db = require('./models');
+
+const db = require('./models').db;
 const nunjucks = require('nunjucks');
+const route = require('./route');
 
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
@@ -16,6 +18,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 const path = require('path');
 app.use(express.static(path.join(__dirname, '/public')));
+
+app.use('/trip',route);
 
 app.get('/', function (req, res, next) {
 

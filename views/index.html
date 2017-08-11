@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Welcome to Hotel!</h1>
+
+<ul class="list-unstyled">
+    <ul>
+
+
+       <select name="select">
+           {% for hotel in hotels %}
+           <option value = {{hotel.name}}>{{hotel.name}}</option>
+           {% endfor %}
+       </select>
+
+
+        <select name="select">
+            {% for restaurant in restaurants %}
+            <option value = {{restaurant.name}}>{{restaurant.name}}</option>
+            {% endfor %}
+        </select>
+
+        <select name="select">
+            {% for activity in activities %}
+            <option value = {{activity.name}}>{{activity.name}}</option>
+            {% endfor %}
+        </select>
+
+    </ul>
+</ul>
+
+{% endblock %}
+
